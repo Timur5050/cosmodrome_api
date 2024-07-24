@@ -17,7 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/cosmodrome/', include("hangar.urls", namespace="cosmodrome")),
+    path("__debug__/", include("debug_toolbar.urls")),
 ]
