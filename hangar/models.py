@@ -38,7 +38,7 @@ class Racket(models.Model):
 
 
 class RacketFlight(models.Model):
-    flight_time = models.DateTimeField()
+    flight_time = models.DateTimeField(auto_now_add=True)
     racket = models.ForeignKey(Racket, on_delete=models.CASCADE, related_name="flights")
     hangar = models.ForeignKey(Hangar, on_delete=models.CASCADE, related_name="flights")
 
@@ -51,7 +51,6 @@ class RacketFlight(models.Model):
 
 class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class Ticket(models.Model):
